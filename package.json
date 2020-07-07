@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electron": "^5.0.6",
+    "electron": "^7.2.4",
     "knex": "^0.19.0",
     "sqlite3": "^4.0.9"
   },
