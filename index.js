@@ -10,7 +10,14 @@ var knex = require("knex")({
 });
 
 app.on("ready", () => {
-	let mainWindow = new BrowserWindow({ height: 800, width: 800, show: false })
+	let mainWindow = new BrowserWindow({ 
+		height: 800, 
+		width: 800, 
+		show: false,
+		webPreferences: {
+            		nodeIntegration: true
+        	}
+	})
 	mainWindow.loadURL(url.format({
 		pathname: path.join(__dirname, 'main.html'),
 		protocol: 'file',
