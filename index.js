@@ -10,7 +10,10 @@ var knex = require("knex")({
 });
 
 app.on("ready", () => {
-	let mainWindow = new BrowserWindow({ height: 800, width: 800, show: false })
+	//https://stackoverflow.com/questions/44391448/electron-require-is-not-defined/55908510
+        let mainWindow = new BrowserWindow({ height: 500, width: 800, show: false, webPreferences:{ nodeIntegration: true,
+												    contextIsolation: false,}})
+
 	mainWindow.loadURL(url.format({
 		pathname: path.join(__dirname, 'main.html'),
 		protocol: 'file',
